@@ -82,7 +82,7 @@ public class ProcessStockInfo {
                         System.out.println(numberOfStocksDeclined);
                         break;
                     case 5:
-                        new BinarySearch();
+                        System.out.println(new BinarySearch().binarySearch(new MergeSort(stocksPrice).sort(true), scanner.nextDouble(), 0, stocksPrice.length));
                         break;
                     case 6:
                         System.exit(0);
