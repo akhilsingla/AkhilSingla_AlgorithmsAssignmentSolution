@@ -70,21 +70,30 @@ public class ProcessStockInfo {
 
                 switch (option) {
                     case 1:
+                        System.out.println("\nStock prices in ascending order are : ");
                         System.out.println(Arrays.toString(new MergeSort(stocksPrice).sort(true)));
                         break;
                     case 2:
+                        System.out.println("\nStock prices in descending order are : ");
                         System.out.println(Arrays.toString(new MergeSort(stocksPrice).sort(false)));
                         break;
                     case 3:
-                        System.out.println(numberOfStocksRose);
+                        System.out.println("\nTotal no of companies whose stock price rose today : " + numberOfStocksRose);
                         break;
                     case 4:
-                        System.out.println(numberOfStocksDeclined);
+                        System.out.println("\nTotal no of companies whose stock price declined today : " + numberOfStocksDeclined);
                         break;
                     case 5:
-                        System.out.println(new BinarySearch().binarySearch(new MergeSort(stocksPrice).sort(true), scanner.nextDouble(), 0, stocksPrice.length));
+                        System.out.println("\nEnter the key value");
+                        double val = scanner.nextDouble();
+                        boolean isStockPresent = new BinarySearch().binarySearch(new MergeSort(stocksPrice).sort(true), val,0, stocksPrice.length - 1);
+                        if(isStockPresent)
+                            System.out.println("\nStock of value " +val+ " is present ");
+                        else
+                            System.out.println("\nValue not found");
                         break;
                     case 6:
+                        System.out.println("\nExited successfully");
                         System.exit(0);
                         break;
                 }
