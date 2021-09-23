@@ -92,7 +92,7 @@ public class ProcessStockInfo {
                         else
                             System.out.println("\nValue not found");
                         break;
-                    case 6:
+                    case 0:
                         System.out.println("\nExited successfully");
                         System.exit(0);
                         break;
