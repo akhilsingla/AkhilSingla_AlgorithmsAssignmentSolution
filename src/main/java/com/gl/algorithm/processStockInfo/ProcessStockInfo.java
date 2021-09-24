@@ -12,6 +12,7 @@ public class ProcessStockInfo {
 
     public void getInputFromUserAndCompute() {
         Scanner scanner = new Scanner(System.in);
+        //in case of any exception, quit gracefully e.g user enters invalid i/p
         try {
             System.out.println("Enter the no of companies");
             int numberOfCompanies = scanner.nextInt();
@@ -32,7 +33,8 @@ public class ProcessStockInfo {
                     ++numberOfStocksDeclined;
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Invalid i/p, quitting, bye");
+            System.exit(0);
         }
 
         performOperation();
@@ -60,7 +62,7 @@ public class ProcessStockInfo {
                 option = scanner.nextInt();
 
                 //check for invalid option, if entered invalid option 3 times, quit the program
-                if (option < 1 || option > 6) {
+                if (option < 0 || option > 5) {
                     ++numberOfInvalidAttempts;
                     if (numberOfInvalidAttempts == 3) {
                         System.out.println("\nEntered invalid option 3 times, exiting, Bye!!");
