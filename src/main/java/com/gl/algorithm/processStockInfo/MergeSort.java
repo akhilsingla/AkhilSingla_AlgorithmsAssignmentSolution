@@ -10,6 +10,7 @@ public class MergeSort {
         this.tempArray = new double[nums.length];
     }
 
+    //sorting based on parameter, if true then ascending order otherwise descending
     public double[] sort(boolean ascending) {
         mergeSort(0, nums.length - 1, ascending);
         return nums;

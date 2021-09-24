@@ -25,6 +25,7 @@ public class ProcessStockInfo {
                 stockPriceRose = scanner.nextBoolean();
                 stocksPriceRaised[count - 1] = stockPriceRose;
 
+                //keep track number of stocks whose price are increased or decreased
                 if (stockPriceRose)
                     ++numberOfStocksRose;
                 else
@@ -57,6 +58,8 @@ public class ProcessStockInfo {
                         "------------------------------");
 
                 option = scanner.nextInt();
+
+                //check for invalid option, if entered invalid option 3 times, quit the program
                 if (option < 1 || option > 6) {
                     ++numberOfInvalidAttempts;
                     if (numberOfInvalidAttempts == 3) {
@@ -86,9 +89,15 @@ public class ProcessStockInfo {
                     case 5:
                         System.out.println("\nEnter the key value");
                         double val = scanner.nextDouble();
-                        boolean isStockPresent = new BinarySearch().binarySearch(new MergeSort(stocksPrice).sort(true), val,0, stocksPrice.length - 1);
-                        if(isStockPresent)
-                            System.out.println("\nStock of value " +val+ " is present ");
+                        /*search for stock, parameters passed
+                        1st parameter -> Sorted array using merge sort
+                        2nd Parameter -> Value to Search
+                        3rd Parameter -> lower index, initial value is 0
+                        4th Parameter -> higher index, initial value is last index of array i.e  length-1
+                        */
+                        boolean isStockPresent = new BinarySearch().binarySearch(new MergeSort(stocksPrice).sort(true), val, 0, stocksPrice.length - 1);
+                        if (isStockPresent)
+                            System.out.println("\nStock of value " + val + " is present ");
                         else
                             System.out.println("\nValue not found");
                         break;
@@ -97,10 +106,7 @@ public class ProcessStockInfo {
                         System.exit(0);
                         break;
                 }
-
-
             }
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

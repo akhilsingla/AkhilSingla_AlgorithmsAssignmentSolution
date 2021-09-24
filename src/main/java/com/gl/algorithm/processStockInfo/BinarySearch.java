@@ -4,10 +4,12 @@ public class BinarySearch
 {
     public boolean binarySearch(double[] arr, double valueToSearch, int lowIndex, int highIndex)
     {
+        //base condition
         if(highIndex < lowIndex)
             return false;
 
         int middleIndex = lowIndex + (highIndex - lowIndex)/2;
+
         if(arr[middleIndex] == valueToSearch)
             return true;
 
