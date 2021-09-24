@@ -1,0 +1,19 @@
+a) T (n) = 3T (n/2) + n
+
+Time Complexity :- Θ(n^log2(3))
+
+b) T (n) = 64T (n/8) − n^2(log n)
+
+Time Complexity :- NA since f(n) is negative
+
+c) T (n) = 2nT (n/2) + n^n
+
+Time Complexity :- NA since "a" is not constant
+
+d) T (n) = 3T (n/3) + n/2
+
+Time Complexity :- Θ(nlogN)
+
+e) .T (n) = 7T (n/3) + n^2
+
+Time Complexity :- Θ(n^2)
